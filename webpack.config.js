@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin'); 
 
 module.exports = {
   entry: {
@@ -30,6 +31,19 @@ module.exports = {
         },
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          mangle: {
+            keep_classnames: true, // 保留类名
+            keep_fnames: true      // 保留函数名
+          }
+        }
+      })
+    ]
   },
   devServer: {
     static: [
