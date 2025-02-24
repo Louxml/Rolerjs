@@ -19,8 +19,8 @@ module.exports = {
       '@roler/runner': path.resolve(__dirname, 'src/runner/'),
     }
   },
-  mode: 'production',
-  // mode: 'development',
+  // mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
