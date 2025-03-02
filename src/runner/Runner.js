@@ -37,6 +37,20 @@ export class Runner{
     }
 
     /**
+     * 逆序运行（执行）
+     * @param  {...any} args 参数列表
+     * @returns this 链式调用
+     */
+    reverseEmit(...args){
+        const { name ,items } = this;
+        for (let i = items.length - 1, len = 0; i >= len; i--){
+            items[i][name](...args);
+        }
+
+        return this;
+    }
+
+    /**
      * 添加监听对象
      * @param {Object} item 监听对象
      * @returns this 链式调用·
